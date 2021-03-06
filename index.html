@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Jquery</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+    <style>
+        hr{
+            background-color: gray;
+        }
+        #fade_in_p_1,#fade_in_p_2{
+            display: none;
+        }
+        #box1{
+            margin: 20px 0px;
+            padding: 5px;
+            color: black;
+            height: 50px;
+            width: 100px;
+            background-color: lightgrey;
+            position: absolute;
+            opacity: 0.3;
+        }
+        .cal button{
+            margin: 5px 0px;
+            width: 60px;
+            height: 40px;
+            font-weight: 600;
+            
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <div class="container">
+        <h2 class="text-center">Basic Jquery</h2>
+        <hr>
+        <button id="hide_p_1" class="btn btn-info">Click To Hide Below Paragraph</button>
+        <br>
+        <button id="show_p_1" class="btn btn-success my-2">Click To Show The Paragraph</button>
+        <p id="p_1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ea ullam! Autem nobis maxime magnam in</p>
+        <hr>
+        <button id="toggle_1" class="btn btn-danger">Toggle Button</button>
+        <p id="toggle_p_1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum molestiae at laboriosam pariatur dicta eligendi molestias culpa officiis ipsam voluptate, inventore maxime fuga quis ut expedita cumque ratione tempore impedit!</p>
+        <hr>
+        <button id="hide_p_2" class="btn btn-primary">Double Click To Hide Below Paragraph</button>
+        <p id="p_2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ea ullam! Autem nobis maxime magnam in</p>
+        <hr>
+        <h2 class="btn btn-info inline " id="mouse_enter">Mouse Enter Event</h2>
+        <h2 class="btn btn-info inline " id="mouse_leave">Mouse Leave Event</h2>
+        <h2 class="btn btn-info inline " id="hover_1">Hover Event</h2>
+        <h2 class="btn btn-info inline " id="on_event">Click & Mouse Over</h2>
+        <hr>
+        <form action="">
+            <label for="input_1">Click On The Form</label>
+            <input type="text" id="input_1" class="form-control w-50">
+        </form>
+        <hr>
+        <p class="mt-2 p-2 bg-info" id="fade_in_p_1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, molestiae illum recusandae totam impedit asperiores vel. Voluptatum aliquam quasi iure itaque id repudiandae vitae voluptatibus harum totam, corrupti distinctio saepe.</p>
+        <p class="mt-2 p-2 bg-success" id="fade_in_p_2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, molestiae illum recusandae totam impedit asperiores vel. Voluptatum aliquam quasi iure itaque id repudiandae vitae voluptatibus harum totam, corrupti distinctio saepe.</p>
+        <button class="btn btn-light" id="fade_in">Click To Fade In</button>
+        <hr>
+        <p class="my-2 p-2 bg-secondary" id="fade_toggle_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, molestiae illum recusandae totam impedit asperiores vel. Voluptatum aliquam quasi iure itaque id repudiandae vitae voluptatibus harum totam, corrupti distinctio saepe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et dolore velit amet ut doloribus, aperiam ratione expedita ad commodi, quo a itaque dolor officiis sapiente atque blanditiis quas totam minima!</p>
+        <button class="btn btn-danger w-100" id="fade_toggle">Toggle Fade</button>
+        <hr>
+        <div class="bg-light text-dark p-3" id="slide_div">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium veritatis similique, laborum accusamus optio doloremque ducimus iure id sequi nemo, obcaecati reiciendis a tempore commodi! Ratione alias doloribus soluta dolores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ducimus. Veritatis ea in quos maxime doloremque, officiis porro at architecto neque. Ratione repudiandae totam maiores aut est ut dolorum quidem.
+        </div>
+        <button class="btn btn-secondary w-100" id="slide_toggle">Toggle Slide</button>
+        <hr>
+        <button class="btn btn-danger" id="animation_btn">Start Animation</button>
+        <div style="height: 120px;">
+            <div id="box1">
+                Mukit
+            </div>
+        </div>
+        <hr>
+        <p id="chain_p">Mukit24</p>
+        <button class="btn btn-primary" id="chain_btn">Click</button>
+        <hr>
+        <h5 style="border-bottom: 2px black solid;text-align: center;padding: 10px;">Dom Manupulation</h5>
+        <button class="btn btn-info btn-sm" id="dom_btn_1">Click Here</button>
+        <button class="btn btn-primary btn-sm" id="dom_btn_2">Append P tag</button>
+        <h5>Status: <span id="dom1" class="badge badge-success"></span></h5>
+        <div id="dom2"></div>
+        <hr>
+        <form action="">
+            <input id="dom_input_1" type="text" class="form-control" placeholder="Write Something">
+            <button class="btn btn-info btn-sm mt-2" id="dom_btn_3">Click</button>
+            <button class="btn btn-primary btn-sm mt-2" id="dom_btn_4">Check Input Type</button>
+        </form>
+        <h5>Result: <span id="dom_3" class="badge badge-success"></span></h5>
+        <hr>
+        <form action="">
+            <input id="dom_input_2" type="text" class="form-control" placeholder="Write Something">
+            <button class="btn btn-info btn-sm mt-2" id="dom_btn_5">Append First</button>
+            <button class="btn btn-primary btn-sm mt-2" id="dom_btn_6">Append Last</button>
+        </form>
+        <ol id="dom_ol_1">
+            <li>Mukit</li>
+            <li>Hasan</li>
+            <li>Pranto</li>
+        </ol>
+        <hr>
+        <div id="dom_4" style="height: 50px;width: 150px;background-color: darkblue;padding: 10px;">
+            <p>This is Mukit's div</p>
+        </div>
+        <button class="btn btn-warning btn-sm mt-2" id="dom_btn_7">Remove</button>
+        <button class="btn btn-danger btn-sm mt-2" id="dom_btn_8">Empty</button>
+        <hr>
+        <h3 id="dom_5">Mukit Hasan Pranto</h3>
+        <button class="btn btn-success btn-sm mt-2" id="dom_btn_9">Make Red and Italic</button>
+        <button class="btn btn-danger btn-sm mt-2" id="dom_btn_10">Remove Style</button>
+        <button class="btn btn-primary btn-sm mt-2" id="dom_btn_11">Change Background Color</button>
+        <hr>
+        <div>
+            <ul>
+                <li>Mukit <button class="btn btn-light btn-sm mb-1" id="cp_1">Check Parent</button></li>
+                <li>Hasan <button class="btn btn-light btn-sm mb-1 mr-1" id="cp_2">Check All Parents</button><button class="btn btn-light btn-sm mb-1" id="cp_4">Prev Sibling</button></li>
+                <li id="cp__3">Pranto <button class="btn btn-light btn-sm" id="cp_3">Check All Siblings of this Li</button></li>
+            </ul>
+        </div>
+        <button class="btn btn-success btn-sm" id="cl_1">Check All li</button>
+        <button class="btn btn-primary btn-sm" id="cl_2">Check All Blue Button</button>
+        <hr>
+        <h2 style= "text-align: center;"><span class="badge badge-primary">Calculator</span></h2>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="text-center">
+                    <form action="" >
+                        <input type="text" class="form-control" style="font-weight: bold;font-size: large;" id="cal_screen">
+                    </form>
+                    <br>
+                    <div class="cal bg-secondary p-2">
+                        <button class="btn btn-dark" value="0" id="do">0</button>
+                        <button class="btn btn-dark" value="1" id="do">1</button>
+                        <button class="btn btn-dark" value="2" id="do">2</button>
+                        <button class="btn btn-warning" value="+" id="do">+</button>
+                        <br>
+                        <button class="btn btn-dark" value="3" id="do">3</button>
+                        <button class="btn btn-dark" value="4" id="do">4</button>
+                        <button class="btn btn-dark" value="5" id="do">5</button>
+                        <button class="btn btn-warning" value="-" id="do">-</button>
+                        <br>
+                        <button class="btn btn-dark" value="6" id="do">6</button>
+                        <button class="btn btn-dark" value="7" id="do">7</button>
+                        <button class="btn btn-dark" value="8" id="do">8</button>
+                        <button class="btn btn-warning" value="*" id="do">*</button>
+                        <br>
+                        <button class="btn btn-dark" value="9" id="do">9</button>
+                        <button class="btn btn-success" id="equal">=</button>
+                        <button class="btn btn-danger" id="clear">Clear</button>
+                        <button class="btn btn-warning" value="/" id="do">/</button>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="text-center">
+                    <h2><span class="badge badge-danger">Shopping Cart</span></h2>
+                    <form action="">
+                        <input type="text" class="form-control d-inline" style="width: 80%;" placeholder="Write Items" id="sc_input">
+                        <button class="btn btn-success" style="float: right;" id="sc_input_btn">Add</button>
+                    </form>
+                    <div class="bg-light text-dark p-2 my-4 sc" id="sc_list" style="text-align: left;">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        <hr>
+
+    </div>
+
+</body>
+
+</html>
